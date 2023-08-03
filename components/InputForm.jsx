@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export const InputForm = ({ addTodo }) => {
+export const InputForm = ({ addItem }) => {
   const [value, setValue] = useState("");
 
   const [placeholder, setPlaceholder] = useState("eggs, banana, chicken...");
@@ -20,7 +20,7 @@ export const InputForm = ({ addTodo }) => {
     e.preventDefault();
     if (value) {
       // add todo
-      addTodo(value);
+      addItem(value);
       // clear form after submission
       setValue("");
     }

@@ -13,11 +13,11 @@ const remBold = localFont({ src: "../public/fonts/REM-Bold.ttf" });
 // console.log(process.env);
 
 export default function Home() {
-  const [todos, setTodos] = useState([]);
+  const [items, setItems] = useState([]);
   const [mealData, setMealData] = useState([]);
 
   const getMealData = async () => {
-    const ingredientsString = todos.map((todo) => todo.task).join(",+");
+    const ingredientsString = items.map((item) => item.task).join(",+");
     const url = `https://api.spoonacular.com/recipes/findByIngredients?apiKey=${
       process.env.NEXT_PUBLIC_SECRET_KEY
     }&ingredients=${encodeURIComponent(ingredientsString)}&number=3&ranking=1`;
@@ -27,17 +27,17 @@ export default function Home() {
     // console.log(data);
   };
 
-  const addTodo = (todo) => {
-    setTodos([
-      ...todos,
-      { id: uuidv4(), task: todo, completed: false, isEditing: false },
+  const addItem = (item) => {
+    setItems([
+      ...items,
+      { id: uuidv4(), task: item, completed: false, isEditing: false },
     ]);
   };
 
-  const deleteTodo = (id) => setTodos(todos.filter((todo) => todo.id !== id));
+  const deleteItems = (id) => setItems(items.filter((item) => item.id !== id));
 
-  const clearTodos = () => {
-    setTodos([]);
+  const clearItems = () => {
+    setItems([]);
     setMealData([]);
   };
   return (
@@ -46,11 +46,11 @@ export default function Home() {
         What&apos;s in your fridge today?
       </h1>
       <div className="">
-        <InputForm addTodo={addTodo} />
+        <InputForm addItem={addItem} />
       </div>
       <div className="flex flex-wrap gap-5 my-10">
-        {todos.map((todo) => (
-          <IngredientCard key={todo.id} task={todo} deleteTodo={deleteTodo} />
+        {items.map((item) => (
+          <IngredientCard key={item.id} task={item} deleteItems={deleteItems} />
         ))}
       </div>
       <div className="flex gap-5">
@@ -61,7 +61,7 @@ export default function Home() {
           Get Meal Ideas
         </button>
         <button
-          onClick={clearTodos}
+          onClick={clearItems}
           className="shadow-custom-btn-light dark:shadow-custom-btn-dark bg-slate-200 dark:bg-tertiary rounded-md py-3 px-2 duration-75 hover:scale-105 "
         >
           Clear
