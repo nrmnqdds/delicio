@@ -6,7 +6,7 @@ import { ThemeSwitcher } from "@/components/ThemeSwitcher";
 const rem = localFont({ src: "../public/fonts/REM-Regular.ttf" });
 
 export const metadata = {
-  title: "Yumster!",
+  title: "Delicio!",
   description: "Generate recipes based on the ingredients you have at home.",
 };
 
