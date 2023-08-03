@@ -36,8 +36,8 @@ export const InputForm = ({ addTodo }) => {
         className="w-[300px] py-3 px-2 rounded-md bg-slate-200 dark:bg-tertiary shadow-custom-btn-light dark:shadow-custom-btn-dark focus:outline-none"
         placeholder={placeholder}
       />
-      <button type="submit" className="p-2">
-        Add Task
+      <button type="submit" className="p-2 hover:opacity-50">
+        Add
       </button>
     </form>
   );
