@@ -2,6 +2,7 @@ import "./globals.css";
 import localFont from "next/font/local";
 import { ThemeProvider } from "./theme-provider";
 import { ThemeSwitcher } from "@/components/ThemeSwitcher";
+import Footer from "@/components/Footer";
 
 const rem = localFont({ src: "../public/fonts/REM-Regular.ttf" });
 
@@ -17,6 +18,7 @@ export default function RootLayout({ children }) {
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <ThemeSwitcher />
           <main>{children}</main>
+          <Footer />
         </ThemeProvider>
       </body>
     </html>

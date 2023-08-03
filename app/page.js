@@ -10,10 +10,22 @@ import { v4 as uuidv4 } from "uuid";
 
 const remBold = localFont({ src: "../public/fonts/REM-Bold.ttf" });
 
-// console.log(process.env.API_KEY);
+// console.log(process.env);
 
 export default function Home() {
   const [todos, setTodos] = useState([]);
+  const [mealData, setMealData] = useState([]);
+
+  const getMealData = async () => {
+    const ingredientsString = todos.map((todo) => todo.task).join(",+");
+    const url = `https://api.spoonacular.com/recipes/findByIngredients?apiKey=${
+      process.env.NEXT_PUBLIC_SECRET_KEY
+    }&ingredients=${encodeURIComponent(ingredientsString)}&number=3&ranking=1`;
+    const response = await fetch(url);
+    const data = await response.json();
+    setMealData(data);
+    // console.log(data);
+  };
 
   const addTodo = (todo) => {
     setTodos([
@@ -34,6 +46,13 @@ export default function Home() {
           <IngredientCard key={todo.id} task={todo} deleteTodo={deleteTodo} />
         ))}
       </div>
+      <button onClick={getMealData}>Get Meal Ideas</button>
+      {mealData.map((meal) => (
+        <div key={meal.id}>
+          <h1>{meal.title}</h1>
+          <img src={meal.image} alt={meal.title} />
+        </div>
+      ))}
     </main>
   );
 }
