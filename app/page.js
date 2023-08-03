@@ -1,7 +1,7 @@
 "use client";
 
 import localFont from "next/font/local";
-import axios from "axios";
+import { useRouter } from "next/navigation";
 import { useState, useEffect } from "react";
 import "dotenv/config";
 import { InputForm } from "@/components/InputForm";
@@ -27,6 +27,13 @@ export default function Home() {
     // console.log(data);
   };
 
+  const getMealRecipe = async (id) => {
+    const url = `https://api.spoonacular.com/recipes/${id}/information?apiKey=${process.env.NEXT_PUBLIC_SECRET_KEY}`;
+    const response = await fetch(url);
+    const data = await response.json();
+    console.log(data.instructions);
+  };
+
   const addItem = (item) => {
     setItems([
       ...items,
@@ -40,6 +47,9 @@ export default function Home() {
     setItems([]);
     setMealData([]);
   };
+
+  const router = useRouter();
+
   return (
     <main className="flex flex-col min-h-screen items-center p-24 bg-white dark:bg-primary text-secondary dark:text-slate-200">
       <h1 className={` ${remBold.className} text-4xl mb-10`}>
@@ -70,10 +80,13 @@ export default function Home() {
 
       <div className="flex flex-wrap">
         {mealData.map((meal) => (
-          <div key={meal.id}>
+          <button
+            key={meal.id}
+            onClick={() => router.push(`/meals/${meal.id}`)}
+          >
             <h1>{meal.title}</h1>
             <img src={meal.image} alt={meal.title} />
-          </div>
+          </button>
         ))}
       </div>
     </main>
