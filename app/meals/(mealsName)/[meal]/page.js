@@ -21,6 +21,7 @@ export default function Page({ params }) {
     <div className="flex flex-col min-h-screen items-center p-24 bg-white dark:bg-primary text-secondary dark:text-slate-200">
       <h1>Meal ID: {mealData.id}</h1>
       <h2>Meal Name: {mealData.title}</h2>
+      <p>Recipe: {mealData.instructions}</p>
     </div>
   );
 }
