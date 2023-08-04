@@ -27,13 +27,6 @@ export default function Home() {
     // console.log(data);
   };
 
-  const getMealRecipe = async (id) => {
-    const url = `https://api.spoonacular.com/recipes/${id}/information?apiKey=${process.env.NEXT_PUBLIC_SECRET_KEY}`;
-    const response = await fetch(url);
-    const data = await response.json();
-    console.log(data.instructions);
-  };
-
   const addItem = (item) => {
     setItems([
       ...items,
