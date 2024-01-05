@@ -2,7 +2,7 @@ repo_name: nrmnqdds/delicio
 report_id: b4829d27c232d37fe350bab0c69c33f9
 version: 0.1
 repo_type: Public
-timestamp: '2023-12-31T05:23:43+00:00'
+timestamp: '2024-01-05T08:13:36+00:00'
 requested_by: nrmnqdds
 provider: github
 branch: main
@@ -16,6 +16,7 @@ tools:
   category: Languages & Frameworks
   sub_category: Languages
   image_url: https://img.stackshare.io/service/6727/css.png
+  detection_source_url: https://github.com/nrmnqdds/delicio
   detection_source: Repo Metadata
 - name: JavaScript
   description: Lightweight, interpreted, object-oriented language with first-class
@@ -26,6 +27,7 @@ tools:
   category: Languages & Frameworks
   sub_category: Languages
   image_url: https://img.stackshare.io/service/1209/javascript.jpeg
+  detection_source_url: https://github.com/nrmnqdds/delicio
   detection_source: Repo Metadata
 - name: Autoprefixer
   description: PostCSS plugin to parse CSS and add vendor prefixes to CSS rules
@@ -35,6 +37,7 @@ tools:
   category: Languages & Frameworks
   sub_category: CSS Pre-processors / Extensions
   image_url: https://img.stackshare.io/service/2202/72d087642cfce6fef6f2dabec5bf49e8_400x400.png
+  detection_source_url: https://github.com/nrmnqdds/delicio/blob/main/package.json
   detection_source: package.json
   last_updated_by: Qagura
   last_updated_on: 2023-08-02 13:26:42.000000000 Z
@@ -60,6 +63,7 @@ tools:
   category: Languages & Frameworks
   sub_category: CSS Pre-processors / Extensions
   image_url: https://img.stackshare.io/service/3339/rlFcjEdI.png
+  detection_source_url: https://github.com/nrmnqdds/delicio/blob/main/package.json
   detection_source: package.json
   last_updated_by: Qagura
   last_updated_on: 2023-08-02 13:26:42.000000000 Z
@@ -100,6 +104,7 @@ tools:
   category: Languages & Frameworks
   sub_category: Front-End Frameworks
   image_url: https://img.stackshare.io/service/8158/default_660b7c41c3ba489cb581eec89c04655404258c19.png
+  detection_source_url: https://github.com/nrmnqdds/delicio/blob/main/package.json
   detection_source: package.json
   last_updated_by: Qagura
   last_updated_on: 2023-08-03 08:11:37.000000000 Z
@@ -112,6 +117,7 @@ tools:
   category: Build, Test, Deploy
   sub_category: Server Configuration and Automation
   image_url: https://img.stackshare.io/service/8067/default_90dcb1286af7685c68df319c764b80704df1155b.png
+  detection_source_url: https://github.com/nrmnqdds/delicio/blob/main/package.json
   detection_source: package.json
   last_updated_by: Qagura
   last_updated_on: 2023-08-02 17:47:26.000000000 Z
@@ -124,6 +130,7 @@ tools:
   category: Build, Test, Deploy
   sub_category: Code Review
   image_url: https://img.stackshare.io/service/3337/Q4L7Jncy.jpg
+  detection_source_url: https://github.com/nrmnqdds/delicio/blob/main/package.json
   detection_source: package.json
   last_updated_by: Qagura
   last_updated_on: 2023-08-02 13:26:42.000000000 Z
@@ -135,6 +142,7 @@ tools:
   category: Build, Test, Deploy
   sub_category: Version Control System
   image_url: https://img.stackshare.io/service/1046/git.png
+  detection_source_url: https://github.com/nrmnqdds/delicio
   detection_source: Repo Metadata
 - name: npm
   description: The package manager for JavaScript.
@@ -144,6 +152,7 @@ tools:
   category: Build, Test, Deploy
   sub_category: Front End Package Manager
   image_url: https://img.stackshare.io/service/1120/lejvzrnlpb308aftn31u.png
+  detection_source_url: https://github.com/nrmnqdds/delicio/blob/main/package.json
   detection_source: package.json
   last_updated_by: Qagura
   last_updated_on: 2023-08-02 13:26:42.000000000 Z
